@@ -21,16 +21,12 @@ class Solution{
                 System.out.println(x+" can be fitted in:");
                 if(x>=-128 && x<=127)System.out.println("* byte");
                 //Complete the code
-                else if(x>=-32768 && x<= 32767){
-                    System.out.println("* short");
-                    System.out.println("* int");
-                   System.out.println("* long");}
-                else if(x>=-2147483648 && x<=2147483647){
-                    System.out.println("* int");
-                    System.out.println("* long");
-                    }
-                else if(x>=-9.223372e+18 && x<=9.223372e+18-1){
-                    System.out.println("* long");}
+                if(x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1)
+                System.out.println("* short");
+                if(x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1)
+                System.out.println("* int");
+                if(x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1)
+                System.out.println("* long");
             }
             catch(Exception e)
             {
